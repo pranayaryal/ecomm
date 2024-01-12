@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import Logo from './logo';
+import DropdownPage from './DropdownPage';
+import { DropdownAll } from './DropdownAll';
 
 import React from 'react'
 
@@ -15,21 +18,13 @@ export default function Navbar() {
         <div className='px-44 py-8'>
             <div className='flex justify-between'>
                 {/* Left */}
-                <div className='uppercase flex space-x-8 justify-center items-center'>
-                    <p className='hover:underline underline-offset-4'>Coolframes</p>
-                    <div className='relative'>
-                        <p className='hover:underline underline-offset-4'
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}>EyeGlasses</p>
-                        {isDropdownVisible ??
-                            <div className='absolute x-0 y-15 w-15 h-15 bg-pink-500'>
-                                <p>You are here</p>
-                            </div>
-                        }
-                    </div>
-                    <p className='hover:underline underline-offset-4'>Sunglasses</p>
-                    <p className='hover:underline underline-offset-4'>Kids</p>
-                    <p className='hover:underline underline-offset-4'>Sale</p>
+                <Logo />
+                <div className='flex justify-between items-center space-x-8'>
+                    <DropdownPage />
+                    {/* <DropdownAll /> */}
+                    <div className='p-[0.2px] border-b-1 border-transparent hover:border-b hover:border-dark-slate-grey'>Pricing</div>
+                    <div className='p-[0.2px] border-b-1 border-transparent hover:border-b hover:border-dark-slate-grey'>Company</div>
+                    <div className='p-[0.2px] border-b-1 transition duration-100 ease-in-out border-transparent hover:border-b hover:border-dark-slate-grey'>Learn more</div>
                 </div>
                 {/* Right */}
                 <div className='flex space-x-4 items-center'>
