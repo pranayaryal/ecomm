@@ -15,10 +15,11 @@ export default function Navbar() {
         setDropdownVisible(false);
     };
     return (
-        <div className='px-44 py-8'>
+      <>
+        <div className='hidden md:block mt-8 w-[100%] max-w-[1500px] pr-0 ml-auto mr-auto pl-[50px] text-dark-slate-grey'>
             <div className='flex justify-between'>
                 {/* Left */}
-                <Logo />
+                <Logo width="255" height="30" />
                 <div className='flex justify-between items-center space-x-8'>
                     <DropdownPage />
                     {/* <DropdownAll /> */}
@@ -34,5 +35,13 @@ export default function Navbar() {
                 </div>
             </div>
         </div>
+        {/* Mobile */}
+        <div className='block md:hidden mt-8 ml-auto mr-auto px-2 py-4 w-[90%] text-dark-slate-grey'>
+            <div className='flex justify-between'>
+                {/* Left */}
+                <Logo width="180" height="35" />
+            </div>
+        </div>
+      </>
     )
 }

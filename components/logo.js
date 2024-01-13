@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Logo() {
+export default function Logo({ width, height}) {
     return (
 
-        <svg width="255" height="30" viewBox="0 0 255 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width={width} height={height} viewBox="0 0 255 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_517_1618)">
                 <path d="M107.83 7.42058C104.941 7.42058 102.495 8.82937 101.164 11.2235V8.04583H98.2109V29.9968H101.164V21.6034C102.573 23.7759 104.874 25.0106 107.548 25.0106C109.648 25.0106 111.623 24.1361 113.104 22.5532C114.647 20.903 115.499 18.6038 115.499 16.087C115.499 11.0652 112.275 7.41663 107.83 7.41663V7.42058ZM112.405 16.2017C112.405 19.7949 110.112 22.2089 106.7 22.2089C103.288 22.2089 101.109 19.8424 101.109 16.3165C101.109 12.7906 103.457 10.2263 106.814 10.2263C110.171 10.2263 112.405 12.6837 112.405 16.2057V16.2017Z" fill="#273720" />
                 <path d="M87.6494 19.902L82.3095 8.05005H79.0703L86.0082 23.1233L82.3645 30.001H85.6705L96.676 8.05005H93.4603L87.6494 19.902Z" fill="#273720" />
@@ -20,7 +20,7 @@ export default function Logo() {
             </g>
             <defs>
                 <clipPath id="clip0_517_1618">
-                    <rect width="255" height="30" fill="white" />
+                    <rect width={width} height={height} fill="white" />
                 </clipPath>
             </defs>
         </svg>
