@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { useState } from 'react'
-
 import Faq from '../components/Faq'
+import ImageZoom from '@/components/ImageZoom'
 
 export default function Home() {
   const [selected, setSelected] = useState(0)
@@ -27,6 +27,10 @@ export default function Home() {
           <img src='https://assets-global.website-files.com/630955d355f57f38b7c3b1f5/656672e22bde4288b4d6e502_homepage-screenshot-xsm.webp' />
 
         </div>
+
+      </div>
+      <div>
+        <ImageZoom />
 
       </div>
       <div className='flex justify-between items-center mt-8'>
