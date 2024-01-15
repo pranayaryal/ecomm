@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AccordionContext } from "./AccordionContext";
+import { AccordionContext } from "@/context/AccordionContext";
 
 const AccordionItem = ({ toggle, children, className }) => {
   const useAccordion = () => useContext(AccordionContext)

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Faq from '../components/Faq'
 import ImageZoom from '@/components/ImageZoom'
 import ImageMagnifier from '@/components/ImageMagnifier'
+import { CardPage } from '@/components/CardPage'
 
 export default function Home() {
   const [selected, setSelected] = useState(0)
@@ -30,11 +31,10 @@ export default function Home() {
         </div>
 
       </div>
-      <div className='flex'>
-        {/* <ImageZoom /> */}
-        <ImageMagnifier imageUrl='./preset1.png'/>
-
-
+      <div className='flex mt-16 flex-wrap'>
+        <CardPage />
+        <CardPage />
+        <CardPage />
       </div>
       <div className='flex justify-between items-center mt-8'>
         <div className='w-full md:w-[45%] md:mr-[8%]'>

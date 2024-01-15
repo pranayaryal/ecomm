@@ -1,5 +1,5 @@
 
-import AccordionWrapper from '../components/AccordionWrapper'
+import AccordionWrapper from '@/context/AccordionWrapper'
 import AccordionItem from '@/components/AccordionItem'
 import AccordionPanel from '@/components/AccordionPanel'
 

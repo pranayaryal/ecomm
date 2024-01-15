@@ -34,24 +34,26 @@ export default function ImageMagnifier({ imageUrl }) {
             {/* magnifier-img */}
             <img src={imageUrl} alt="" className='w-auto h-[80vh]' />
 
-            <div style={{
-                position: 'absolute',
-                left: `${cursorPosition.x - 100}px`,
-                top: `${cursorPosition.y - 100}px`,
-                pointerEvents: 'none'
+            { showMagnifier &&
+                <div style={{
+                    position: 'absolute',
+                    left: `${cursorPosition.x - 100}px`,
+                    top: `${cursorPosition.y - 100}px`,
+                    pointerEvents: 'none'
 
-            }}>
-                {/* magnifier-image */}
-                <div className='w-[200px] h-[200px] border-2 border-black-500 bg-no-repeat'
-                    style={{
-                        backgroundImage: `url(${imageUrl})`,
-                        backgroundPosition: `${position.x}% ${position.y}%`,
+                }}>
+                    {/* magnifier-image */}
+                    <div className='w-[200px] h-[200px] border-2 border-black-500 bg-no-repeat'
+                        style={{
+                            backgroundImage: `url(${imageUrl})`,
+                            backgroundPosition: `${position.x}% ${position.y}%`,
 
-                    }}
-                >
+                        }}
+                    >
 
+                    </div>
                 </div>
-            </div>
+            }
 
 
         </div>

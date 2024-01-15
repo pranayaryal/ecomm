@@ -1,4 +1,4 @@
-import { AccordionContext } from "./AccordionContext";
+import { AccordionContext } from "@/context/AccordionContext";
 import { useRef, useContext } from "react";
 
 const AccordionPanel = ({ children, id }) => {
