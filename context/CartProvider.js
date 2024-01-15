@@ -1,7 +1,7 @@
-import { useCallback, useState } from "react";
+import { useEffect, useState } from "react";
 import { CartContext } from "./CartContext";
 
-const CartWrapper = ({ children }) => {
+export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([])
 
   const addToCart = () => {
@@ -47,6 +47,18 @@ const CartWrapper = ({ children }) => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
   }
 
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems))
+  }, [cartItems])
+
+  useEffect(() => {
+    const cartItems = localStorage.getItem("cartItems")
+    if (cartItems) {
+      setCartItems(JSON.parse(cartItems))
+    }
+  }, [])
+
+
   return (
     <CartContext.Provider
         value={{ 
@@ -62,5 +74,3 @@ const CartWrapper = ({ children }) => {
 
   )
 };
-
-export default CartWrapper;
