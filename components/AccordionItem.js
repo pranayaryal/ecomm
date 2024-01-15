@@ -4,7 +4,6 @@ import { AccordionContext } from "@/context/AccordionContext";
 const AccordionItem = ({ toggle, children, className }) => {
   const useAccordion = () => useContext(AccordionContext)
   const { selected, toggleItem } = useAccordion()
-  console.log(selected)
   return (
     <div
       onClick={toggleItem(toggle)}

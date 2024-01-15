@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext } from "react";
 import { CartContext } from "./CartContext";
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([])
+  const [cartItems, setCartItems] = useState([{id: 1, price: 100, quantity: 1}, {id: 2, price: 900, quantity: 1}])
 
-  const addToCart = () => {
+  const addToCart = (item) => {
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id)
 
     if (isItemInCart){

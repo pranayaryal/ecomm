@@ -1,11 +1,14 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Logo from './logo';
 import DropdownPage from './DropdownPage';
 import { DropdownAll } from './DropdownAll';
+import { CartContext } from '@/context/CartContext';
 
 import React from 'react'
 
 export default function Navbar() {
+    const { cartItems } = useContext(CartContext)
+    console.log(cartItems)
     const [isDropdownVisible, setDropdownVisible] = useState(false);
     const handleMouseEnter = () => {
         setDropdownVisible(true);
@@ -28,9 +31,13 @@ export default function Navbar() {
                     <div className='p-[0.2px] border-b-1 transition duration-100 ease-in-out border-transparent hover:border-b hover:border-dark-slate-grey'>Learn more</div>
                 </div>
                 {/* Right */}
-                <div className='flex space-x-4 items-center'>
+                <div className='flex space-x-2 items-center'>
                     <input type="text" className='px-4 py-2 bg-pink-50 outline-none rounded-full' placeholder='Search' />
-                    <p className='uppercase'>Cart</p>
+                    <div className='relative'>
+                        <p className='uppercase text-xs'>Cart</p>
+                        <button className='absolute top-0 left-0 text-xs-0 p-[2px] w-full rounded-full bg-pink-200 text-black text-xs flex items-center justify-center'>{cartItems.length}</button>
+
+                    </div>
 
                 </div>
             </div>

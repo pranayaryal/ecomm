@@ -1,5 +1,9 @@
+import { CartContext } from "../context/CartContext";
+import { useContext, useEffect, useState } from "react";
 
-export const CardPage = () => {
+
+export const CardPage = ({ id, price }) => {
+  const { cartItems, addToCart } = useContext(CartContext);
   return (
     <div className="w-full md:w-1/4 mb-6 md:mb-0 md:p-3">
       <Card>
@@ -12,9 +16,13 @@ export const CardPage = () => {
           <CardTitle className="text-lg">Lamborghini</CardTitle>
           <CardText>
             Joe made these sugar cookies. Susan decorated them. When
-            motorists sped in and out of traffic
+            motorists sped in and out of traffic.
+            {`Price: ${price}`}
+
           </CardText>
-          <button className="text-dark-slate-grey flex py-3 rounded-md w-full bg-yellow-custom justify-center items-center mt-4 cursor-pointer">
+          <button
+            onClick={() => addToCart({ id, price })}
+            className="text-dark-slate-grey flex py-3 rounded-md w-full bg-yellow-custom justify-center items-center mt-4 cursor-pointer">
             Add To Cart
           </button>
         </CardBody>
