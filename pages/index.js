@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { useState } from 'react'
 import Faq from '../components/Faq'
 import ImageZoom from '@/components/ImageZoom'
+import ImageMagnifier from '@/components/ImageMagnifier'
 
 export default function Home() {
   const [selected, setSelected] = useState(0)
@@ -30,7 +31,9 @@ export default function Home() {
 
       </div>
       <div className='flex'>
-        <ImageZoom />
+        {/* <ImageZoom /> */}
+        <ImageMagnifier imageUrl='./preset1.png'/>
+
 
       </div>
       <div className='flex justify-between items-center mt-8'>
