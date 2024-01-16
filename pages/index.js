@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Faq from '../components/Faq'
 import ImageZoom from '@/components/ImageZoom'
 import ImageMagnifier from '@/components/ImageMagnifier'
@@ -8,7 +8,16 @@ import { CardPage } from '@/components/CardPage'
 import { CartProvider } from '@/context/CartProvider'
 
 export default function Home() {
+
   const [selected, setSelected] = useState(0)
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    fetch('https://fakestoreapi.com/products')
+      .then(res => res.json())
+      .then(json => setProducts(json))
+
+  }, [])
 
   const handleClick = (id) => {
     console.log(`You clicked ${id}`)
@@ -33,9 +42,9 @@ export default function Home() {
 
       </div>
       <div className='flex mt-16 flex-wrap'>
-        <CardPage id={1} price={30} />
-        <CardPage id={2} price={40} />
-        <CardPage id={3} price={199} />
+        {products.map(product => {
+          return <CardPage key={product.id} product={product} />
+        })}
       </div>
       <div className='flex justify-between items-center mt-8'>
         <div className='w-full md:w-[45%] md:mr-[8%]'>

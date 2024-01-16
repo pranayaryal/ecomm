@@ -2,22 +2,21 @@ import { CartContext } from "../context/CartContext";
 import { useContext, useEffect, useState } from "react";
 
 
-export const CardPage = ({ id, price }) => {
+export const CardPage = ({ product }) => {
   const { cartItems, addToCart } = useContext(CartContext);
   return (
-    <div className="w-full md:w-1/4 mb-6 md:mb-0 md:p-3">
+    <div className="w-full md:w-1/6 mb-6 md:mb-0 md:p-3">
       <Card>
         <img
           className="max-w-full h-auto md:h-48"
-          src="https://res.cloudinary.com/beloved/image/upload/v1608683063/Assets/lamborghini_mxb2j7.jpg"
+          src={product.image}
           alt="Bugatti"
         />
         <CardBody>
-          <CardTitle className="text-lg">Lamborghini</CardTitle>
+          <CardTitle className="text-lg">{product.title}</CardTitle>
           <CardText>
-            Joe made these sugar cookies. Susan decorated them. When
-            motorists sped in and out of traffic.
-            {`Price: ${price}`}
+            {product.description}
+            {`Price: ${product.price}`}
 
           </CardText>
           <button
