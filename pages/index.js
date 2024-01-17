@@ -43,6 +43,7 @@ export default function Home() {
       </div>
       <div className='flex mt-16 flex-wrap'>
         {products.map(product => {
+          console.log(product)
           return <CardPage key={product.id} product={product} />
         })}
       </div>

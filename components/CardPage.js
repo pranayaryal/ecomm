@@ -15,12 +15,12 @@ export const CardPage = ({ product }) => {
         <CardBody>
           <CardTitle className="text-lg">{product.title}</CardTitle>
           <CardText>
-            {product.description}
+            {product.category}
             {`Price: ${product.price}`}
 
           </CardText>
           <button
-            onClick={() => addToCart({ id, price })}
+            onClick={() => addToCart({ id: product.id, price: product.price })}
             className="text-dark-slate-grey flex py-3 rounded-md w-full bg-yellow-custom justify-center items-center mt-4 cursor-pointer">
             Add To Cart
           </button>
