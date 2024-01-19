@@ -5,7 +5,7 @@ import { CartProvider } from '@/context/CartProvider'
 export default function Layout({ children }) {
   return (
     <CartProvider>
-      <div className='bg-white-smoke'>
+      <div className='bg-white-smoke flex flex-col'>
         <Navbar />
         <main>{children}</main>
         <Footer />

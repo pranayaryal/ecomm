@@ -8,7 +8,6 @@ import React from 'react'
 
 export default function Navbar() {
     const { cartItems } = useContext(CartContext)
-    console.log(cartItems)
     const [isDropdownVisible, setDropdownVisible] = useState(false);
     const handleMouseEnter = () => {
         setDropdownVisible(true);

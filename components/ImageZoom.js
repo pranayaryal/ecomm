@@ -41,7 +41,6 @@ export default function ImageZoom() {
         lensRef.current.backgroundImage = null;
       }
 
-      console.log(lensRef.current.offsetWidth)
 
 
       // let positionLeft = cursorX - (lensRef.current.offsetWidth / 2)
@@ -49,7 +48,6 @@ export default function ImageZoom() {
 
       // positionLeft = Math.max(positionLeft, 0)
       // positionTop = Math.max(positionTop, 0)
-      console.log(imageRef.current.height)
 
 
       // positionTop = Math.min(positionTop, (imageRef.current.height - lensRef.current.offsetHeight / 3))
@@ -86,7 +84,6 @@ export default function ImageZoom() {
         lensRef.current.backgroundImage = null;
       }
 
-      console.log(lensRef.current.offsetWidth)
 
 
       // let positionLeft = cursorX - (lensRef.current.offsetWidth / 2)
@@ -94,7 +91,6 @@ export default function ImageZoom() {
 
       // positionLeft = Math.max(positionLeft, 0)
       // positionTop = Math.max(positionTop, 0)
-      console.log(imageRef.current.height)
 
 
       // positionTop = Math.min(positionTop, (imageRef.current.height - lensRef.current.offsetHeight / 3))

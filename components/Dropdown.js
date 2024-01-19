@@ -41,7 +41,6 @@ export default function Dropdown({ children }) {
 
     }
     const { show, toggle } = useToggle();
-    console.log(`From main function ${show}`)
 
     const dropdownToggle = children[0];
     const dropdownMenu = children[1];
